@@ -1,0 +1,4 @@
+flask
+gunicorn
+matplotlib
+psycopg2-binary
