@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ day }} Workout</title>
+</head>
+<body>
+    <h1>{{ day }} Workout</h1>
+    <form method="POST">
+        {% for ex in exercises %}
+        <h3>{{ ex }}</h3>
+        {% for s in range(3) %}
+            <label>Set {{ s+1 }} - Reps:</label>
+            <input type="number" name="{{ ex }}_reps_{{s}}">
+            <label>Weight (kg):</label>
+            <input type="number" name="{{ ex }}_weight_{{s}}">
+            <br>
+        {% endfor %}
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>
